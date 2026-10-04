@@ -23,7 +23,7 @@ isOfficial: false
 shareImage: /images/skills/share/audiocreator-foleyix-share.png
 installCommand: |
   npx skills add lvyinchao/foleyix-skill --skill audiocreator-foleyix -a qoder
-date: 2026-10-04
+date: 2026-10-05
 ---
 
 ## 使用场景
@@ -38,7 +38,7 @@ date: 2026-10-04
 npx skills add lvyinchao/foleyix-skill --skill audiocreator-foleyix -a qoder
 ```
 
-需安装完整技能目录，包括参考资料和脚本。v1.4.1 可从 [GitHub 发布页](https://github.com/lvyinchao/foleyix-skill/releases/tag/v1.4.1) 获取。
+需安装完整技能目录，包括参考资料和脚本。v1.5.0 可从 [GitHub 发布页](https://github.com/lvyinchao/foleyix-skill/releases/tag/v1.5.0) 获取。
 
 ## 示例
 
@@ -57,5 +57,5 @@ npx skills add lvyinchao/foleyix-skill --skill audiocreator-foleyix -a qoder
 - Skill 与 CLI 采用 MIT-0 免费开源；实际生成使用用户的 Foleyix 免费体验或订阅额度。
 - 声音类型及限制与网站共享能力清单。背景音乐和带人声歌曲有独立的提示词指导。
 - CLI 可通过 `node scripts/foleyix.mjs voices --json` 查询当前账号的已保存音色。重复使用 `--voice-id ID` 最多绑定三个不同的参考音，按顺序对应 `@voice1`、`@voice2`、`@voice3`。参考音必须属于当前账号、预览已完成且仍在保留期内，每个最多 30 秒、10 MB；加上参考音描述后的完整提示词最多 3,000 字符。
-- 创建、导入或上传已保存音色、批量游戏音效及节目导出需使用网站流程；CLI 暂不提供参考音上传或创建。
+- CLI 1.5.0 可用 `voice-create` 创建合成音色资料、`voice-preview` 生成可复用参考预览，以及 `voice-upload --rights-confirmed` 上传有权使用的 WAV。新版登录显示 `voices:write`，旧连接需重新登录并批准该权限。预览使用生成秒数，上传仅使用存储额度。目录导入、批量游戏音效及节目导出继续使用网站流程。
 - 指定时长属于生成指导。需检查实际任务和完整文件再报告完成；下载已有声音不消耗新的生成额度。

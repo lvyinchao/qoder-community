@@ -23,7 +23,7 @@ isOfficial: false
 shareImage: /images/skills/share/audiocreator-foleyix-share.png
 installCommand: |
   npx skills add lvyinchao/foleyix-skill --skill audiocreator-foleyix -a qoder
-date: 2026-10-04
+date: 2026-10-05
 ---
 
 ## Use Cases
@@ -38,7 +38,7 @@ date: 2026-10-04
 npx skills add lvyinchao/foleyix-skill --skill audiocreator-foleyix -a qoder
 ```
 
-Install the complete skill directory, including its references and script. Version 1.4.1 is available from the [GitHub release](https://github.com/lvyinchao/foleyix-skill/releases/tag/v1.4.1).
+Install the complete skill directory, including its references and script. Version 1.5.0 is available from the [GitHub release](https://github.com/lvyinchao/foleyix-skill/releases/tag/v1.5.0).
 
 ## Examples
 
@@ -57,5 +57,5 @@ Prompt-only requests require no login, local runtime, or generation quota. When 
 - The skill and CLI are free MIT-0 software; actual generation uses the user's Foleyix trial or subscription quota.
 - Audio types and limits share a capability catalog with the website. Background music and vocal songs use different prompt guidance.
 - The CLI lists the connected account's saved voices with `node scripts/foleyix.mjs voices --json`. Repeated `--voice-id ID` flags bind up to three distinct, completed, retained voice references in `@voice1`, `@voice2`, `@voice3` order. Each reference is limited to 30 seconds and 10 MB; the compiled prompt, including reference descriptions, must fit 3,000 characters.
-- Creating, importing or uploading saved voices, batch game effects and programme exports use website workflows. The CLI does not provide voice upload or creation.
+- CLI 1.5.0 creates synthetic voice metadata with `voice-create`, generates reusable reference audio with `voice-preview`, and uploads authorized WAVs with `voice-upload --rights-confirmed`. New login displays `voices:write`; older connections must reconnect and approve this permission. Preview consumes generation seconds; upload consumes storage only. Catalog import, batch game effects and programme exports use website workflows.
 - Requested duration is guidance. Report completion only after the existing task and its delivered file have been checked; downloading an existing result does not consume new generation quota.
